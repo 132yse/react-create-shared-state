@@ -4,7 +4,7 @@ export function createContext(defaultValue) {
   const listeners = new Set()
   let backupValue = defaultValue
 
-  return () => {
+  return function useContext() {
     const [value, setValue] = useState(backupValue)
 
     useEffect(() => {
