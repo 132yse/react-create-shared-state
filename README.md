@@ -22,33 +22,11 @@ import { createContext } from '@fre/awesome'
 const useTheme = createContext('light')
 
 function App {
-  return (
-    <Toolbar />
-    <ThemeSwitch />
-  )
-}
-
-function Toolbar() {
-  return (
-    <div>
-      <ThemedButton />
-    </div>
-  )
-}
-
-function ThemedButton() {
-  const [theme] = useTheme()
-  return <Button theme={theme} />
-}
-
-function ThemeSwitch {
   const [theme, setTheme] = useTheme()
   return (
-    <Button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-    >
+    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
       {theme}
-    </Button>
+    </button>
   )
 }
 ```
