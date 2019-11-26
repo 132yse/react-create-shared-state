@@ -17,15 +17,15 @@ This package allows sharing data between components with hooks. In many cases le
 [Demo](https://codesandbox.io/s/react-create-shared-state-demo-9s9ui)
 
 ```jsx
-import { createContext } from 'react-create-shared-state';
+import { createContext } from '@fre/awesome'
 
-const useTheme = createContext('light');
+const useTheme = createContext('light')
 
 function App {
   return (
     <Toolbar />
     <ThemeSwitch />
-  );
+  )
 }
 
 function Toolbar() {
@@ -33,22 +33,22 @@ function Toolbar() {
     <div>
       <ThemedButton />
     </div>
-  );
+  )
 }
 
 function ThemedButton() {
-  const [theme] = useTheme();
-  return <Button theme={theme} />;
+  const [theme] = useTheme()
+  return <Button theme={theme} />
 }
 
 function ThemeSwitch {
-  const [theme, setTheme] = useTheme();
+  const [theme, setTheme] = useTheme()
   return (
     <Button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {theme}
     </Button>
-  );
+  )
 }
 ```
