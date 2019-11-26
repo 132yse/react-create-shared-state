@@ -17,9 +17,9 @@ This package allows sharing data between components with hooks. In many cases le
 [Demo](https://codesandbox.io/s/react-create-shared-state-demo-9s9ui)
 
 ```jsx
-import { createSharedState } from 'react-create-shared-state';
+import { createContext } from 'react-create-shared-state';
 
-const useTheme = createSharedState('light');
+const useTheme = createContext('light');
 
 function App {
   return (
